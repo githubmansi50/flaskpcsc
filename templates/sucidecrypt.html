@@ -1,0 +1,365 @@
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="../../../../favicon.ico">
+    
+        <title>SUCI Tool</title>
+    
+        <!-- Bootstrap core CSS -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+    
+        <!-- Custom styles for this template -->
+        <link href="dashboard.css" rel="stylesheet">
+    </head>
+    <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="label" href="#" style="color: aliceblue">G+D Project</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" 
+      aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarsExample07">
+        <ul class="navbar-nav mr-auto">
+          
+          <li class="nav-item ">
+            <a class="nav-link" href="/suciencrypt" id="dropdown07" 
+            aria-haspopup="true" aria-expanded="false">SUCI Encryption</a>
+            
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/sucidecrypt" id="dropdown07" 
+            aria-haspopup="true" aria-expanded="false">SUCI Decryption</a>
+            
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+    </nav>
+        <!-- Toolbar -->
+        <div class="container-col-md-12">
+          <!-- HEADING OF THE Toolbar -->
+        
+          <br />
+        
+          <!-- Input Parameter Container -->
+          <form class="container col-md-10" >
+            <!-- Grid row 
+            <div class="mx-auto" style="width: 200px;">
+              <h2 class="badge badge-dark">G + D : SUCI Calc Tool</h2>
+            </div>
+            -->
+        
+            <!--Select Card Reader-->
+            <div class="form-group row">
+              <!-- Material input -->
+              <label for="hnprivatekey" class="col-sm-2 col-form-label">
+                <h3 class="font-weight-bold badge badge-pill">Select Card Reader</h3>
+              </label>
+              <div class="col-md-8">
+                <div class="md-form mt-3">
+                  <select required class=" form-control text-monospace" 
+                  placeholder="Select Card Connected to SUCICalc">
+                    <option>OmniKey SmartCard Reader 3121</option>
+                    <option>Reader 2</option>
+                    <option>Reader 3</option>
+                    <option>Reader 4</option>
+                    
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-2 md-form mt-3">
+        
+                <button type="button" id="requestDevice" style="width: 90%" 
+                class="text-monospace btn btn-outline-secondary">
+                    Connect / Disconnect
+                </button>
+              </div>
+            </div>
+        
+            <!--End of Row 1 - Connect-->
+            <!--Card-->
+        
+            <div class="form-group row ">
+              <!--Card 1: Details From Card Files-->
+              
+        
+              <!--Card 2: Table - User Pin Config -->
+             <div class="container col-md-12">
+                  <div class="card-deck">
+                      <div class="card">
+                          <div class="card-block">
+                              <div class="card-header">
+                                  <h4 class="card-title text-center">Details From Card Files</h4>
+                              </div>
+                              <div class="md-form form-group">
+                                  <label for="supiformat" class="col-sm-2 col-form-label">
+                                      <h3 class="font-weight-bold badge badge-pill">ICCID</h3>
+                                  </label>
+                                  <div class="col-sm-12">
+                                      <div class="md-form mt-0">
+                                          <input type="text" class="form-control text-monospace" readonly id="supiformat" />
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="md-form form-group">
+                                  <label for="supiformat" class="col-sm-2 col-form-label">
+                                      <h3 class="font-weight-bold badge badge-pill">IMSI</h3>
+                                  </label>
+                                  <div class="col-sm-12">
+                                      <div class="md-form mt-0">
+                                          <input type="text" class="form-control text-monospace" readonly id="supiformat" />
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="card">
+                          <div class="card-block">
+                              <div class="card-header text-center">
+                                  <h4 class="card-title text-center">User Pin Configuration</h4>
+                              </div>
+                              <div class="table-responsive">
+                                  <table class="table">
+                                      <thead class="thead-light">
+                                          <tr>
+                                              <th scope="col">File Name</th>
+                                              <th scope="col">File ID</th>
+                                              <th scope="col">Read AC</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr>
+                                              <td>EF_IMSI</td>
+                                              <td>6F07</td>
+                                              <td>
+                                                  <button class="btn dropdown-toggle" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Disabled/Always</button>
+                                                  <div class="dropdown-menu" aria-labelledby="dropdown07">
+                                                      <a class="dropdown-item">PIN Appl 1</a>
+                                                      <a class="dropdown-item Disabled">NA</a>
+                                                  </div>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>EF_UST</td>
+                                              <td>6F38</td>
+                                              <td>
+                                                  <button class="btn dropdown-toggle" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Disabled/Always</button>
+                                                  <div class="dropdown-menu" aria-labelledby="dropdown07">
+                                                      <a class="dropdown-item">PIN Appl 1</a>
+                                                      <a class="dropdown-item Disabled">NA</a>
+                                                  </div>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>EF_DIR</td>
+                                              <td>3F002F00</td>
+                                              <td>
+                                                  <button class="btn dropdown-toggle" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Disabled/Always</button>
+                                                  <div class="dropdown-menu" aria-labelledby="dropdown07">
+                                                      <a class="dropdown-item">PIN Appl 1</a>
+                                                      <a class="dropdown-item">NA</a>
+                                                  </div>
+                                              </td>
+                                          </tr>
+                                      </tbody>
+                                  </table>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <br>
+              </div>
+              <!--Get Identity-->
+              <div class="col-md-12">
+        
+                <button type="button" style="align-self: flex-end; width: 100%"
+                  class="text-monospace btn btn-outline-secondary">
+                  Get Identity
+                </button>
+              </div>
+            </div>
+        
+            <!--Get Identity Response-->
+            <div class="form-group row">
+              <!-- Material input -->
+              <label for="hnprivatekey" class="col-sm-2 col-form-label">
+                <h3 class="font-weight-bold badge badge-pill">Get Identity Response</h3>
+              </label>
+              <div class="col-sm-8">
+                <div class="md-form mt-3">
+                  <input mdbInput type="text" class="form-control text-monospace" id="ciphertxt" />
+                </div>
+              </div>
+              <div class="col-sm-2 md-form mt-3">
+                <button type="button" style="width: 80%" class="text-monospace btn btn-outline-secondary">
+                  GO
+                </button>
+              </div>
+            </div>
+        
+            <!--Parsed Output-->
+            <div class="card col-md-12" style="height: 20%; width: 120%;">
+              <div class="card-body">
+                <h3 class="card-title font-weight-bold">Parsed Output</h3>
+        
+                <table class="table">
+                  <thead class="thead-light">
+                    <tr>
+                      <th scope="col">SUPI Format</th>
+                      <th scope="col">Identity Type</th>
+                      <th scope="col">MCC</th>
+                      <th scope="col">MNC</th>
+                      <th scope="col">Routing Indicator</th>
+                      <th scope="col">PSID</th>
+                      <th scope="col">HN. Key ID</th>
+                      <th scope="col">MAC</th>
+                      <th scope="col">Cipher Text</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="col">
+                        <input type="text" class="form-control" aria-describedby="basic-addon3">
+                      </th>
+                      <th scope="col">
+                        <input type="text" class="form-control" aria-describedby="basic-addon3">
+                      </th>
+                      <th scope="col">
+                        <input type="text" class="form-control" aria-describedby="basic-addon3">
+                      </th>
+                      <th scope="col">
+                        <input type="text" class="form-control" aria-describedby="basic-addon3">
+                      </th>
+                      <th scope="col">
+                        <input type="text" class="form-control" aria-describedby="basic-addon3">
+                      </th>
+                      <th scope="col">
+                        <input type="text" class="form-control" aria-describedby="basic-addon3">
+                      </th>
+                      <th scope="col">
+                        <input type="text" class="form-control" aria-describedby="basic-addon3">
+                      </th>
+                      <th scope="col">
+                        <input type="text" class="form-control" aria-describedby="basic-addon3">
+                      </th>
+                      <th scope="col">
+                        <input type="text" class="form-control" aria-describedby="basic-addon3">
+                      </th>
+        
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+        
+            <!--Eph. Public Key-->
+            <div class="form-group row">
+              <!-- Material input -->
+              <label for="hnprivatekey" class="col-sm-2 col-form-label">
+                <h3 class="font-weight-bold badge badge-pill">Eph. Public Key</h3>
+              </label>
+              <div class="col-sm-10">
+                <div class="md-form mt-3">
+                  <input mdbInput type="text" class="form-control text-monospace" id="ciphertxt" />
+                </div>
+              </div>
+            </div>
+        
+            <!--HN. Private Key (Profile)-->
+            <div class="form-group row">
+              <!-- Material input -->
+              <label for="hnprivatekey" class="col-sm-2 col-form-label">
+                <h3 class="font-weight-bold badge badge-pill">HN. Private Key</h3>
+              </label>
+              <div class="col-sm-8">
+                <div class="md-form mt-3">
+                  <input mdbInput type="text" class="form-control text-monospace" id="ciphertxt" />
+                </div>
+              </div>
+              <div class="col-sm-2 md-form mt-3">
+                <button type="button" style="width: 80%" class="text-monospace btn btn-outline-secondary">
+                  Calculate
+                </button>
+              </div>
+            </div>
+            <br />
+        
+            <!--Calculated Output-->
+            <div class="card col-md-12" style="height: 40%; width: 120%;">
+              <div class="card-body">
+                <h3 class="card-title font-weight-bold">Calculated Output</h3>
+        
+                <table class="table">
+                  <tr>
+                    <div class="input-group">
+                      <span class="input-group-text col-md-2" id="basic-addon2">Shared Key</span>
+                      <input readonly  formControlName="Shared_Key" type="text" class="form-control text-monospace" id="sharedkey" />
+                    </div>
+        
+                    <div class="input-group">
+                      <span class="input-group-text col-md-2" id="basic-addon2">Decrypted Key</span>
+                      <input readonly  formControlName="Shared_Key" type="text" class="form-control text-monospace" id="sharedkey" />
+                    </div>
+        
+                    <div class="input-group">
+                      <span class="input-group-text col-md-2" id="basic-addon2">ICB</span>
+                      <input readonly  formControlName="Shared_Key" type="text" class="form-control text-monospace" id="sharedkey" />
+                    </div>
+        
+                    <div class="input-group">
+                      <span class="input-group-text col-md-2" id="basic-addon2">MAC Key</span>
+                      <input readonly  formControlName="Shared_Key" type="text" class="form-control text-monospace" id="sharedkey" />
+                    </div>
+        
+                    <div class="input-group">
+                      <span class="input-group-text col-md-2" id="basic-addon2">Decrypted Key</span>
+                      <input readonly  formControlName="Shared_Key" type="text" class="form-control text-monospace" id="sharedkey" />
+                    </div>
+        
+                    <div class="input-group">
+                      <span class="input-group-text col-md-2" id="basic-addon2">Calculated MAC</span>
+                      <input readonly  formControlName="Shared_Key" type="text" class="form-control text-monospace" id="sharedkey" />
+                    </div>
+        
+                    <div class="input-group">
+                      <span class="input-group-text col-md-2" id="basic-addon2">MSIN</span>
+                      <input readonly  formControlName="Shared_Key" type="text" class="form-control text-monospace" id="sharedkey" />
+                    </div>
+        
+                  </tr>
+                  <tbody>
+        
+                  </tbody>
+                </table>
+              </div>
+            </div>
+        
+            <!-- LOG Capturing-->
+            <div class="form-group row ">
+              <!-- Material input -->
+              <label for="hnprivatekey" class="col-sm-2 col-form-label">
+                <h3 id="status" class="font-weight-bold badge badge-pill">Log</h3>
+              </label>
+            </div>
+            <div class="col-sm-12">
+              <div class="md-form mt-0">
+                <div readonly id="log" class="input required form-control text-monospace" type="text" style="height: 30%;"></div>
+              </div>
+              <br/>
+            </div>
+        
+          </form>
+        </div>
+        
+  
+    </body>
+  </html>
+            
